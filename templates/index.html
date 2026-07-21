@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasha AI - Chatbot</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===================== 1. LANDING PAGE ===================== -->
+<section id="landingPage" class="page active">
+  <nav class="navbar">
+    <div class="logo">🧠 Sasha <span>AI</span></div>
+    <div class="nav-links">
+      <a href="#" onclick="showModal('home')">Home</a>
+      <a href="#" onclick="showModal('about')">About</a>
+      <a href="#" onclick="showModal('features')">Features</a>
+      <button class="btn-pink" onclick="showPage('loginPage')">Start Chat</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Welcome to <span class="gradient-text">Sasha AI</span></h1>
+      <h3>Your Intelligent Conversation Partner</h3>
+      <p>A smart AI chatbot powered by Google Gemini and Python Flask. Ask anything, learn anything!</p>
+      <button class="btn-pink big" onclick="showPage('loginPage')">Start Chat</button>
+    </div>
+    <div class="hero-image">
+      <img src="/static/robot.png" alt="Sasha AI Robot">
+    </div>
+  </div>
+
+  <div class="features-row">
+    <div class="feature-card">
+      <div class="icon">⚡</div>
+      <h4>Powered by Gemini AI</h4>
+      <p>Advanced language understanding</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🛡️</div>
+      <h4>Secure &amp; Private</h4>
+      <p>Your conversations are safe</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📱</div>
+      <h4>Responsive Design</h4>
+      <p>Works on all devices</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 2. LOGIN PAGE ===================== -->
+<section id="loginPage" class="page">
+  <div class="login-box">
+    <div class="robot.png"></div>
+    <h1>Sasha <span class="gradient-text">AI</span></h1>
+    <p>Enter your name to continue</p>
+
+    <input type="text" id="userNameInput" placeholder="Enter your name" />
+
+    <button class="btn-gradient" onclick="startChat()">Continue to Chat</button>
+
+    <div class="divider"><span>or</span></div>
+
+    <button class="btn-outline" onclick="showPage('landingPage')">&larr; Back to Home</button>
+  </div>
+</section>
+
+<!-- ===================== 3. CHAT INTERFACE ===================== -->
+<section id="chatPage" class="page">
+  <div class="chat-container">
+    <div class="chat-header">
+      <div class="chat-title">
+        <div class="chat-avatar">🧠</div>
+        <div>
+          <h3>Sasha AI</h3>
+          <span class="status">🟢 Online</span>
+        </div>
+      </div>
+      <div class="chat-actions">
+        <button title="Dark/Light Mode" onclick="toggleTheme()">🌙</button>
+        <button title="Clear Chat" onclick="clearChat()">🗑️</button>
+        <button title="Logout" onclick="logout()">↩️</button>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will be appended here by script.js -->
+    </div>
+
+    <div class="typing-indicator" id="typingIndicator" style="display:none;">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="chat-input-area">
+      <button class="icon-btn" title="Emoji">😊</button>
+      <input type="text" id="messageInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+      <button class="icon-btn" title="Attach">📎</button>
+      <button class="icon-btn" title="Voice">🎤</button>
+      <button class="send-btn" onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+</section>
+<!-- ===================== INFO MODAL ===================== -->
+<div id="infoModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
