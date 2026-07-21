@@ -33,11 +33,13 @@ function sendWelcomeMessage(name) {
   const lowerName = name.toLowerCase();
 
   if (lowerName === "manisha") {
-    welcomeText = "🌸 Good Morning Manisha! Have a beautiful day, just like you 😊 I'm delighted to assist you today.";
+    welcomeText = "🌸 hello mam Have a beautiful day, just like you 😊 I'm delighted to assist you how can i help you.";
   } else if (lowerName === "subbu") {
     welcomeText = "😎 Welcome back, Boss! VIP Mode Activated. 🚀";
+  } else if (lowerName === "ramesh"){
+    welcomeText = "kya haal chaal hai ramesh aate wali kaisi hai.";
   } else {
-    welcomeText = `Hello 👋 ${name}! How can I assist you today?`;
+    welcomeText = `hello 😊 ${name}! dear i am your AI assistent how can i help you?`;
   }
 
   addMessage(welcomeText, 'bot');
